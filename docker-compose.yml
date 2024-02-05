@@ -1,0 +1,18 @@
+version: '3'
+services:
+    weatherapi:
+      image: weatherstation
+      restart: always
+      container_name: weatherapi
+      environment:
+        - API_HOST=0.0.0.0
+        - API_PORT=8033
+        - INFLUXDB_URL=http://localhost:8086
+        - INFLUX_ORG=ANO
+        - INFLUX_BUCKET=weatherstation
+        - INFLUX_TOKEN=yf8BusEl_49aU08P5Noj6SjzVKmj7wd2IFk6hbSDz_dOlMu-AtUZl8Q6NPNA-o7aL8R4MM8dduA6yc4P-a-WAg==
+        - WEATHER_STATION_ID=Home11
+        - WEATHER_STATION_PASSWORD="hdjnehu7jvgDfhgy6"
+      ports:
+        - "8033:8033"
+        
